@@ -1,0 +1,14 @@
+{
+  "name": "poisson-solver",
+  "version": "0.0.1",
+  "description": "Node Implementation of a finite diference poisson solver",
+  "main": "poisson.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "author": "Flavio Sousa",
+  "license": "MIT"
+}
