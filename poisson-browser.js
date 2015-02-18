@@ -187,16 +187,16 @@ Poisson.prototype.yy = function (i) {
   }
 };
 
-Poisson.prototype.analitical = function () {
+Poisson.prototype.analytical = function () {
 
-  this.u.analitical = new Array(this.bm*this.bn);
+  this.u.analytical = new Array(this.bm*this.bn);
   for (var i = 0; i < this.bn; i++) { //y
     for (var j = 0; j < this.bm; j++) { //x  
 
       var x = this.xx(j);
       var y = this.yy(i);  
 
-      this.u.analitical[i*this.bm + j] = Math.cos(Math.PI*(0.5-x/this.w)) * Math.sin(Math.PI*y/this.h);
+      this.u.analytical[i*this.bm + j] = Math.cos(Math.PI*(0.5-x/this.w)) * Math.sin(Math.PI*y/this.h);
     }
   }
 };

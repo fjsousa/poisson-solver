@@ -7,7 +7,7 @@ module.exports = function () {
 
     var array = new Array(poisson.bm);
     for (var i = 0; i < array.length; i++) {
-      array[i] = poisson.u.analitical[row*poisson.bm + i];
+      array[i] = poisson.u.analytical[row*poisson.bm + i];
     }
     return array;
   };
@@ -16,7 +16,7 @@ module.exports = function () {
 
     var array = new Array(poisson.bn);
     for (var i = 0; i < array.length; i++) {
-      array[i] = poisson.u.analitical[i*poisson.bn + col];
+      array[i] = poisson.u.analytical[i*poisson.bn + col];
     }
     return array;
   };
@@ -44,13 +44,13 @@ module.exports = function () {
   assert(poisson.bw === bw, 'Property bw.');
   assert(poisson.bm === bm, 'Property bm.');
 
-  poisson.analitical();
+  poisson.analytical();
 
   var nw = u(d_x*(opt.m * opt.bCol - 1), 0);
   var sw = u(d_x*(opt.m * opt.bCol - 1), d_y*opt.n);
 
-  assert(nw === poisson.u.analitical[0], 'NW analitical ok.');
-  assert(sw === poisson.u.analitical[opt.n*poisson.bm], 'SW analitical ok.');
+  assert(nw === poisson.u.analytical[0], 'NW analytical ok.');
+  assert(sw === poisson.u.analytical[opt.n*poisson.bm], 'SW analytical ok.');
 
   var errb = poisson.setBoundaryConditions(getRow(0), getRow(opt.n), getCol(opt.m), getCol(0));
   assert(!errb, 'Boundaries not set ');
@@ -75,12 +75,12 @@ module.exports = function () {
 
       var res = 0;
       for (var i = 0; i < poisson.bn*poisson.bm; i++) {
-        res += Math.abs(poisson.u.new[i]-poisson.u.analitical[i]);
+        res += Math.abs(poisson.u.new[i]-poisson.u.analytical[i]);
       }
 
       res = res/poisson.bn/poisson.bm;
 
-      assert(res < 1E-4, 'Numerical equals analitical.');
+      assert(res < 1E-4, 'Numerical equals analytical.');
 
     } 
   }

@@ -43,16 +43,16 @@ module.exports = function () {
 
 
   if (output.residue <= maxResidue) {
-    poisson.analitical();
+    poisson.analytical();
 
     var res = 0;
     for (var i = 0; i < opt.n*opt.m; i++) {
-      res += Math.abs(poisson.u.new[i] - poisson.u.analitical[i]);
+      res += Math.abs(poisson.u.new[i] - poisson.u.analytical[i]);
     }
 
     res = res/poisson.n/poisson.m;
 
-    assert(res < 1E-1,'Numerical equals analitical.'); 
+    assert(res < 1E-1,'Numerical equals analytical.'); 
 
   }
 };

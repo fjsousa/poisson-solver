@@ -2,9 +2,9 @@ var Poisson = require('.');
 
 //Set conditions
 var conditions = {
-  w: 1,		//width or x dimension
-  h: 1,		//height or y dimension
-  n: 50, 	//width or x dimension
+  w: 1,	  //width or x dimension
+  h: 1,   //height or y dimension
+  n: 50,  //width or x dimension
   m: 50
 };
 
@@ -36,8 +36,8 @@ console.log('Solver converged with', output.iterations, 'iterations and', output
 //Print 
 poisson.print('./field.txt', poisson.u.old);
 
-poisson.analitical();
-poisson.print('./analitical.txt', poisson.u.analitical);
+poisson.analytical();
+poisson.print('./analytical.txt', poisson.u.analytical);
 
 
 
