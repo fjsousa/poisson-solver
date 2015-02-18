@@ -49,24 +49,24 @@ poisson.print('./analytical.txt', poisson.u.analytical);
 
 ```
 
-You can visualize the field with your favorite plotting software. I would recommend [veusz](http://home.gna.org/veusz/). Here's how it should look 
+You can visualize the field with your favorite plotting software. I would recommend [veusz](http://home.gna.org/veusz/). Here's how it should look:
 
 ![Solution](https://raw.githubusercontent.com/fjsousa/poisson-solver/master/docs/analytical.png "Solution")
 
 
 ##Browser
 
-If you have [browserify installed](https://github.com/substack/node-browserify) you can create a browser version of the poisson solver. Just run
+If you have [browserify installed](https://github.com/substack/node-browserify) you can create a browser version of the poisson solver. Just run:
 
 `npm run browserify`
 
-and then include a script tag on your html file.
+and then include a script tag on your html file:
 
 ```html
 <script type='text/javascript', src='poisson-browser.js'></script>
 ```
 
-Now you can require and use the solver in the browser like you would do with node.
+Now you can require and use the solver in the browser like you would do with node:
 
 ```javascript
 var Poisson = require('poisson');
