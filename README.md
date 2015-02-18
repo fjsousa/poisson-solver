@@ -51,7 +51,7 @@ poisson.print('./analytical.txt', poisson.u.analytical);
 
 You can visualize the field with your favorite plotting software. I would recommend [veusz](http://home.gna.org/veusz/). Here's how it should look 
 
-![Analytical](https://github.com/fjsousa/poisson-solver/tree/master/docs/analytical.png "Title")
+![Solution](https://raw.githubusercontent.com/fjsousa/poisson-solver/master/docs/analytical.png "Solution")
 
 
 ##Browser

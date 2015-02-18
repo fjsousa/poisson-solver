@@ -2,9 +2,9 @@ var Poisson = require('.');
 
 //Set conditions
 var conditions = {
-  w: 1,	  //width or x dimension
-  h: 1,   //height or y dimension
-  n: 50,  //width or x dimension
+  w: 1,	 
+  h: 1,   
+  n: 50, 	
   m: 50
 };
 
