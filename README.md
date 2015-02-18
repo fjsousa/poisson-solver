@@ -43,13 +43,16 @@ console.log('Solver converged with', output.iterations, 'iterations and', output
 //Print solution
 poisson.print('./field.txt', poisson.u.old);
 
-//Print analitical solution
-poisson.analitical();
-poisson.print('./analitical.txt', poisson.u.analitical);
+//Print analytical solution
+poisson.analytical();
+poisson.print('./analytical.txt', poisson.u.analytical);
 
 ```
 
-You can visualize the field with your favorite plotting software. I would recommend (veusz)[http://home.gna.org/veusz/]. Here's 
+You can visualize the field with your favorite plotting software. I would recommend [veusz](http://home.gna.org/veusz/). Here's how it should look 
+
+![Analytical](https://github.com/fjsousa/poisson-solver/tree/master/docs/analytical.png "Title")
+
 
 ##Browser
 
