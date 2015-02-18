@@ -97,7 +97,7 @@ Poisson.prototype.solver = function (maxItt, maxRes) {
 
     res = this.residue();
     if (++itt%100 === 0) {
-      console.log('Poisson solver:', itt, res);
+      console.log('Solver: iteration #', itt, 'with residue of', res);
     }
 
     this.swap();

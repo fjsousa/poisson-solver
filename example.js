@@ -1,11 +1,11 @@
-var Poisson = require('.poisson');
+var Poisson = require('.');
 
 //Set conditions
 var conditions = {
   w: 1,		//width or x dimension
   h: 1,		//height or y dimension
-  n: 1000, 	//width or x dimension
-  m: 1000
+  n: 50, 	//width or x dimension
+  m: 50
 };
 
 //Initialize solver
@@ -30,8 +30,9 @@ var maxItterations = 100000000;
 var maxResidue = 1E-9 ;
 
 //Run solver 
-poisson.solver( maxItterations, maxResidue);
+var output = poisson.solver( maxItterations, maxResidue);
 
+console.log('Solver converged with', output.iterations, 'iterations and', output.residue, 'residue.');
 //Print 
 poisson.print('./field.txt', poisson.u.old);
 
