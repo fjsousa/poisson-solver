@@ -1,5 +1,5 @@
 # poisson-solver
-Javascript Implementation of a finite diference poisson solver.
+Javascript Implementation of a finite differences poisson solver.
 
 ##Getting started 
 
