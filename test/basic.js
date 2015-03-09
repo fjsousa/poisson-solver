@@ -6,7 +6,7 @@ module.exports = function () {
   var opt = {
     w: 1,
     h: 1,
-    n: 5, //y # of nodes
+    n: 4, //y # of nodes
     m: 5//x # of nodes
   };
 
@@ -21,8 +21,8 @@ module.exports = function () {
 
   var N = [0,0,0,0,0];
   var S = [0,0,0,0,0];
-  var E = [0,0,0,0,0];
-  var W = [0,0,0,0,0];
+  var E = [0,0,0,0];
+  var W = [0,0,0,0];
 
   var err = poisson.setBoundaryConditions(N, S, E, W);
 
