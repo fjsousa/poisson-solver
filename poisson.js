@@ -72,15 +72,17 @@ Poisson.prototype.solver = function (maxItt, maxRes) {
   var res = 1000000;
   while ( res > maxRes && itt < maxItt ) {
 
+    this.copy();
+
     for (var i = 1; i < this.bn - 1; i++) { //y
       for (var j = 1; j < this.bm - 1; j++) { //x
 
         var idx = i*(this.bm) + j;
 
-        var sum = this.AW[idx]*this.u.old[i * this.bm + j - 1] +
-         this.AE[idx]*this.u.old[i * this.bm + j + 1] +
-         this.AS[idx]*this.u.old[(i + 1) * this.bm + j] +
-         this.AN[idx]*this.u.old[(i - 1) * this.bm + j];
+        var sum = this.AW[idx]*this.u.new[i * this.bm + j - 1] +
+         this.AE[idx]*this.u.new[i * this.bm + j + 1] +
+         this.AS[idx]*this.u.new[(i + 1) * this.bm + j] +
+         this.AN[idx]*this.u.new[(i - 1) * this.bm + j];
 
         var x = this.xx(j);
         var y = this.yy(i);
@@ -96,10 +98,10 @@ Poisson.prototype.solver = function (maxItt, maxRes) {
 
     res = this.residue();
     if (++itt%100 === 0) {
-      console.log('Solver: iteration #', itt, 'with residue of', res);
+      // console.log('Solver: iteration #', itt, 'with residue of', res);
     }
 
-    this.swap();
+    // this.swap();
 
   }
 
@@ -150,6 +152,14 @@ Poisson.prototype.print = function (filename, dataSet) {
   }
 };
 
+Poisson.prototype.copy = function () {
+
+  for (var i = 0; i < this.u.new.length; i++) {
+    this.u.old[i] = this.u.new[i];
+  }
+
+};
+
 Poisson.prototype.swap = function () {
 
   var temp = this.u.old;
@@ -161,7 +171,7 @@ Poisson.prototype.swap = function () {
 Poisson.prototype.initialize = function () {
 
   for (var i = 0; i < this.bn*this.bm; i++) {
-    this.u.old[i] = 0;
+    this.u.new[i] = this.u.old[i] = 0;
   }
 
 };
